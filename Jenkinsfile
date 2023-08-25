@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello World 111'
+                sh 'composer install'
+                sh 'cp .env.example .env'
+                sh 'php artisan key:generate'
+                echo 'Done'
             }
         }
     }
