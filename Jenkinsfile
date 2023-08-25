@@ -7,6 +7,7 @@ pipeline {
                 sh 'composer install'
                 sh 'cp .env.example .env'
                 sh 'php artisan key:generate'
+                sh 'php artisan optimize:clear'
                 echo 'Done'
             }
         }
